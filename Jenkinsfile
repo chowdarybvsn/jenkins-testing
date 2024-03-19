@@ -7,8 +7,8 @@ pipeline {
                 script {
                     // Define paths to Jenkinsfiles
                     def jenkinsfilePaths = [
-                        '/dev/Jenkinsfile',
-                        '/prod/Jenkinsfile',
+                        'dev/Jenkinsfile',
+                        'prod/Jenkinsfile',
                         // Add paths to other Jenkinsfiles as needed
                     ]
                     
