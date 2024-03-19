@@ -4,7 +4,10 @@ pipeline {
    stages{
        stage("first"){
           steps{
-            sh 'uptime'
+            script{
+                def jenkinsfilePath = env.SCRIPT_NAME
+                echo "Jenkinsfile Path: ${jenkinsfilePath}"
+            }
           }
        }
    }
