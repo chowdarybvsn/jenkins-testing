@@ -5,7 +5,7 @@ pipeline {
        stage("first"){
           steps{
             script{
-                pwd
+                sh 'pwd'
             }
           }
        }
