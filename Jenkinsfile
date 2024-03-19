@@ -5,11 +5,11 @@ pipeline {
         stage('Trigger Builds') {
             steps {
                 script {
-                    def cwd = pwd()
+                    def workspaceDir = env.WORKSPACE
                     // Define paths to Jenkinsfiles
                     def jenkinsfilePaths = [
-                        '${cwd}/dev/Jenkinsfile',
-                        '${cwd}/prod/Jenkinsfile',
+                        '${workspaceDir}/dev/Jenkinsfile',
+                        '${workspaceDir}/prod/Jenkinsfile',
                         // Add paths to other Jenkinsfiles as needed
                     ]
                     
