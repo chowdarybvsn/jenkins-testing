@@ -5,7 +5,7 @@ pipeline {
        stage("first"){
           steps{
             script{
-                sh echo "QA"
+                sh 'echo "QA"'
             }
           }
        }
