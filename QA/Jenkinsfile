@@ -3,12 +3,7 @@ pipeline {
    
    stages{
        stage("first"){
-          when {
-                // Only execute if the correct webhook token is provided
-                expression {
-                    env.WEBHOOK_TOKEN == 'token-QA'
-                }
-          }
+          
           steps{
             script{
                 sh 'echo "QA"'
