@@ -1,6 +1,8 @@
 pipeline {
    agent any
-   
+   options {
+        skipDefaultCheckout(true) // Skip checkout by default
+   }
    stages{
        stage("first"){
           when {
