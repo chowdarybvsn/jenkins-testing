@@ -1,12 +1,21 @@
 pipeline {
-    agent any
-    
-    when {
-        // Check if changes were made to the specified folder
-        changeset "MYLAB/prod/**"
-    }
-    
+    agent any    
     stages {
+        stage("Conditional Execution") {
+            steps {
+                script {
+                    // Check if changes were made to the specified folder
+                    def changes = sh(script: "git diff --name-only HEAD^ HEAD", returnStdout: true).trim()
+                    if (changes.contains("MYLAB/prod/")) {
+                        echo "Changes detected in MYLAB/prod directory. Proceeding with pipeline execution."
+                    } else {
+                        echo "No changes detected in MYLAB/prod directory. Skipping pipeline execution."
+                        currentBuild.result = 'ABORTED' // Abort the pipeline
+                        return // Exit the pipeline
+                    }
+                }
+            }
+        }
         stage("first") {
             steps {
                 script {
