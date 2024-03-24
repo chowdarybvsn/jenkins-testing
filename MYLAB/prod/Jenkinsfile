@@ -1,8 +1,8 @@
 pipeline {
    agent any
-    when {
-                // Check if changes were made to the specified folder
-                changeset "MYLAB/prod/**"
+   when {
+      // Check if changes were made to the specified folder
+      changeset "MYLAB/prod/**"
    }
    stages{
        stage("first"){
