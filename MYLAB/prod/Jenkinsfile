@@ -1,6 +1,6 @@
 pipeline {
    agent any
-   when {
+   when{
       // Check if changes were made to the specified folder
       changeset "MYLAB/prod/**"
    }
