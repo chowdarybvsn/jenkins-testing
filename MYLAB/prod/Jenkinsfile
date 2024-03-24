@@ -3,6 +3,10 @@ pipeline {
    
    stages{
        stage("first"){
+          when {
+                // Check if changes were made to the specified folder
+                changeset "**/prod/**"
+          }
           steps{
             script{
                 sh 'pwd'
