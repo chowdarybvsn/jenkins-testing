@@ -1,0 +1,16 @@
+pipeline {
+   agent any
+   
+   stages{
+       stage("first"){
+          
+          steps{
+            script{
+                sh 'echo "QA"'
+                sh 'uptime'
+            }
+          }
+       }
+   }
+}
+#testingqa
