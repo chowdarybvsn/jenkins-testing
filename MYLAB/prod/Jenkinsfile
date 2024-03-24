@@ -1,12 +1,11 @@
 pipeline {
    agent any
-   
-   stages{
-       stage("first"){
-          when {
+    when {
                 // Check if changes were made to the specified folder
                 changeset "MYLAB/prod/**"
-          }
+   }
+   stages{
+       stage("first"){
           steps{
             script{
                 sh 'uptime'
