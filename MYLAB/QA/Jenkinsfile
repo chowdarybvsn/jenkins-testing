@@ -1,6 +1,9 @@
 pipeline {
    agent any
-   
+   environment {
+        
+        BRANCH_NAME = "dev"
+   }
    stages{
        stage("first"){
             when { 
