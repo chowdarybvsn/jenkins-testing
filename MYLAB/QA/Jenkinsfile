@@ -3,9 +3,7 @@ pipeline {
    
    stages{
        stage("first"){
-          when {
-             changeset "h/l/"
-          }
+
           steps{
             script{
                 sh 'echo "QA env"'
