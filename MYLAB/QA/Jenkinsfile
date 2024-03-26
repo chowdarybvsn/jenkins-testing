@@ -3,7 +3,7 @@ pipeline {
    
    stages{
        stage("first"){
-          when {
+          when{
           }
           steps{
             script{
