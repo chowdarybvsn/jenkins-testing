@@ -6,7 +6,7 @@ pipeline {
           
           steps{
             script{
-                sh 'echo "QA"'
+                sh 'echo "QA env"'
                 sh 'uptime'
             }
           }
