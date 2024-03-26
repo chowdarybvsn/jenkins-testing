@@ -2,25 +2,7 @@ pipeline {
     agent any
     
     stages {
-        stage('Check File Changes') {
-            steps {
-                script {
-                    // Call the function and store the result
-                    def directoryHasChanges = checkFileChanges('MYLAB/QA/')
-                    
-                    // Check if the directory has changes
-                    if (directoryHasChanges) {
-                        echo "Directory 'MYLAB/QA/' has changes. Proceeding to the next stage."
-                    } else {
-                        echo "Directory 'MYLAB/QA/' has no changes. Skipping the next stage."
-                        // Skip the next stage
-                        currentBuild.result = 'SUCCESS'
-                        return
-                    }
-                }
-            }
-        }
-        
+                
         stage('Your Next Stage') {
             when {
                 expression { checkFileChanges('MYLAB/QA/') }
