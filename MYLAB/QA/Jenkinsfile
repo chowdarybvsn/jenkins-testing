@@ -23,7 +23,7 @@ pipeline {
         
         stage('Your Next Stage') {
             when {
-                expression { checkFileChanges('/my-directory') }
+                expression { checkFileChanges('MYLAB/QA/') }
             }
             steps {
                 sh 'uptime'
