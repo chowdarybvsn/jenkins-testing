@@ -6,12 +6,9 @@ pipeline {
    }
    stages{
        stage("first"){
-            when { 
-               expression { BRANCH_NAME == 'master' }
-            }   
             steps{
                script{
-                   sh 'echo "QA env"'
+                   sh 'git diff  origin/master --name-only'
                    sh 'uptime'
                }
             }
