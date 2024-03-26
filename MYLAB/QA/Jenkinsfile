@@ -3,7 +3,9 @@ pipeline {
    
    stages{
        stage("first"){
-         when { changeset "/terraform/**"}
+            when { 
+               expression { BRANCH_NAME == 'dev' }
+            }   
             steps{
                script{
                    sh 'echo "QA env"'
