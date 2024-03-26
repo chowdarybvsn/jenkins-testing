@@ -8,7 +8,8 @@ pipeline {
        stage("first"){
             steps{
                script{
-                   sh 'git diff'
+                    def fileChanges = sh(script: 'git diff --name-only', returnStdout: true).trim()
+                    echo "Changed files: ${fileChanges}"
                    sh 'uptime'
                }
             }
