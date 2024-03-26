@@ -29,7 +29,22 @@ pipeline {
                 sh 'uptime'
             }
         }
-        
+        stage('2nd Stage') {
+            when {
+                expression { checkFileChanges('MYLAB/QA/') }
+            }
+            steps {
+                sh 'uname -a'
+            }
+        }
+        stage('3rd Stage') {
+            when {
+                expression { checkFileChanges('MYLAB/QA/') }
+            }
+            steps {
+                sh 'free -m'
+            }
+        }
     }
 }
 
