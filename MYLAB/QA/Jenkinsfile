@@ -7,7 +7,7 @@ pipeline {
    stages{
        stage("first"){
             when { 
-               expression { BRANCH_NAME == 'dev' }
+               expression { BRANCH_NAME == 'master' }
             }   
             steps{
                script{
