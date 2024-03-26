@@ -3,7 +3,10 @@ pipeline {
    
    stages{
        stage("first"){
-          when{
+          when {
+             beforeAgent true
+             branch 'main'
+             changeset "terraform/**"
           }
           steps{
             script{
