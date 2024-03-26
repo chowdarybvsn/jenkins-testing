@@ -3,7 +3,7 @@ pipeline {
    
    stages{
        stage("first"){
-          when { changeset "/terraform/**"}          }
+          when { changeset "/terraform/**"}
           steps{
             script{
                 sh 'echo "QA env"'
