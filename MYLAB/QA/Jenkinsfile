@@ -6,7 +6,7 @@ pipeline {
           when {
              beforeAgent true
              branch 'main'
-             changeset "terraform/**"
+             changeset "terraform"
           }
           steps{
             script{
