@@ -14,4 +14,10 @@ pipeline {
        }
    }
 }
-#
+def checkFileChanges(directory) {
+    // Run git diff command and capture the output
+    def diffOutput = sh(script: "git diff --name-only HEAD HEAD~1", returnStdout: true).trim()
+    
+    // Check if the provided directory is in the output
+    return diffOutput.contains(directory)
+}
