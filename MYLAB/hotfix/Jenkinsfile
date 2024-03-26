@@ -2,17 +2,31 @@ pipeline {
    agent any
    
    stages{
-       stage("first"){
-          when {
-             changeset "MYLAB/hotfix/**"
-          }
-          steps{
-            script{
-                sh 'echo "hotfix"'
+       stage('Your Next Stage') {
+            when {
+                expression { checkFileChanges('MYLAB/hotfix/') }
             }
-          }
-       }
-   }
+            steps {
+                sh 'uptime'
+            }
+        }
+        stage('2nd Stage') {
+            when {
+                expression { checkFileChanges('MYLAB/hotfix/') }
+            }
+            steps {
+                sh 'uname -a'
+            }
+        }
+        stage('3rd Stage') {
+            when {
+                expression { checkFileChanges('MYLAB/hotfix/') }
+            }
+            steps {
+                sh 'free -m'
+            }
+        }
+    }
 }
 def checkFileChanges(directory) {
     // Run git diff command and capture the output
