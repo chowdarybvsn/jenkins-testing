@@ -8,7 +8,7 @@ pipeline {
           }
           steps{
             script{
-                sh 'echo "hotfix env"'
+                sh 'echo "hotfix"'
             }
           }
        }
