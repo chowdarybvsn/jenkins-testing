@@ -8,7 +8,7 @@ pipeline {
        stage("first"){
             steps{
                script{
-                   sh 'git branch'
+                   sh 'git diff --name-only'
                    sh 'uptime'
                }
             }
