@@ -3,6 +3,9 @@ pipeline {
    
    stages{
        stage("first"){
+          when {
+             changeset "MYLAB/hotfix/**"
+          }
           steps{
             script{
                 sh 'echo "hotfix env"'
