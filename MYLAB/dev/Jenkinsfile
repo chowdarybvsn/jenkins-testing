@@ -20,7 +20,7 @@ pipeline {
         }
         stage('3rd Stage') {
             when {
-                expression { checkFileChanges('MYLAB/QA/') }
+                expression { checkFileChanges('MYLAB/dev/') }
             }
             steps {
                 sh 'free -m'
