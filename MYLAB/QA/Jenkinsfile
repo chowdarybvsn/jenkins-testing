@@ -24,7 +24,7 @@ pipeline {
                 expression { checkFileChanges('MYLAB/QA/') }
             }
             steps {
-                sh 'free -m'
+                sh 'mvn deploy'
             }
         }
     }
